@@ -1,1 +1,15 @@
-<app-recipe-item></app-recipe-item>
+<div class="w-full p-2 space-y-4">
+    <button class="new-recipe-btn">New Recipe</button>
+    <div class="w-full space-y-4">
+        <a href="#" class="w-full pl-2 flex border-2 hover:bg-gray-300 cursor-pointer transition-colors" *ngFor="let recipe of recipes">
+            <div class="flex flex-col w-full gap-2">
+                <h4 class="font-bold text-xl">{{ recipe.name }}</h4>
+                <p>{{ recipe.description }}</p>
+            </div>
+            <div>
+                <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" >
+            </div>
+        </a>
+    </div>
+    <!-- <app-recipe-item></app-recipe-item> -->
+</div>

@@ -1,5 +1,8 @@
-<div class="w-full flex justify-around items-center">
+<div class="w-full flex flex-col gap-2 p-4">
     <app-shopping-edit></app-shopping-edit>
-    <hr>
-    <p>The list</p>
+    <div class="w-full flex flex-col">
+        <a class="border w-80 p-4" *ngFor="let ingredient of ingredients">
+            {{ ingredient.name }} ({{ ingredient.amount}})
+        </a>
+    </div>
 </div>

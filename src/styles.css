@@ -4,12 +4,16 @@
 @tailwind utilities;
 
 @layer components {
-    .new-recipe-btn {
+    .new-btn {
         @apply bg-green-500 text-white p-4 rounded-md hover:bg-green-600 transition-colors;
     }
 
-    .manage-recipe-btn {
+    .manage-btn {
         @apply bg-blue-500 text-white p-4 rounded-md hover:bg-blue-600 transition-colors flex items-center justify-normal gap-1;
+    }
+
+    .delete-btn {
+        @apply bg-red-500 text-white p-4 rounded-md hover:bg-red-600 transition-colors;
     }
 
     .nav-brand {
@@ -22,5 +26,9 @@
 
     .nav-dropdown {
         @apply text-gray-500 font-bold select-none;
+    }
+
+    .text-input {
+        @apply border p-2
     }
 }

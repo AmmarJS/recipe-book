@@ -1,4 +1,9 @@
 <div class="w-full flex">
     <app-recipe-list class="w-[50%]" (itemSelected)="showRecipe($event)"></app-recipe-list>
-    <app-recipe-detail class="w-[50%]" [recipe]="recipe"></app-recipe-detail>
+    <app-recipe-detail class="w-[50%]"
+    *ngIf="recipe; else infoText"
+    [recipe]="recipe"></app-recipe-detail>
+    <ng-template #infoText>
+        
+    </ng-template>
 </div>

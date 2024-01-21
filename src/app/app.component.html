@@ -1,5 +1,5 @@
 <div class="w-full h-full font-mono">
-  <app-header></app-header>
-  <app-recipes></app-recipes>
-  <app-shopping-list></app-shopping-list>
+  <app-header (loadedFeature)="renderFeature($event)"></app-header>
+  <app-recipes *ngIf="loadedFeature == 'recipe'"></app-recipes>
+  <app-shopping-list *ngIf="loadedFeature == 'shopping-list'"></app-shopping-list>
 </div>

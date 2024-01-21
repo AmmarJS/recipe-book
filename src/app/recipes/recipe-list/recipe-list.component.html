@@ -1,15 +1,11 @@
 <div class="w-full p-4 space-y-4">
-    <div class="w-full space-y-4">
-        <a href="#" class="w-full pl-1 flex shadow-md cursor-pointer rounded-md hover:translate-x-3 hover:outline transition-all" *ngFor="let recipe of recipes">
-            <div class="flex flex-col w-full gap-2 p-1">
-                <h4 class="font-bold text-xl">{{ recipe.name }}</h4>
-                <p>{{ recipe.description }}</p>
-            </div>
-            <div class="">
-                <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="w-60 h-48 rounded-md object-cover">
-            </div>
-        </a>
+    <div class="w-full flex flex-col gap-4">
+        <app-recipe-item
+        *ngFor="let recipeItem of recipes"
+        [recipe]="recipeItem"
+        [isSelected]="recipeItem.id === selectedItem ? true : false"
+        (selected)="selectItem($event)"
+        ></app-recipe-item>
     </div>
     <button class="new-btn w-full">New Recipe</button>
-    <!-- <app-recipe-item></app-recipe-item> -->
 </div>

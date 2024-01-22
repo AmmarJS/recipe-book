@@ -5,11 +5,15 @@
             <a class="nav-link" href="#" (click)="navigate('recipe')">Recipes</a>
             <a class="nav-link" href="#" (click)="navigate('shopping-list')">Shopping List</a>
         </div>
-        <div class="flex items-center justify-normal cursor-pointer gap-1">
+        <div appDropdown class="flex items-center justify-normal cursor-pointer gap-1 relative">
             <p class="nav-dropdown">Manage</p>
-            <svg class="w-2.5 h-2.5 mt-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <svg class="w-2.5 h-2.5 mt-1 transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6" #svg>
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg>
+            <div class="absolute w-32 rounded-md shadow-xl flex-col origin-top transition-all overflow-hidden cursor-default bg-white border hidden top-12 right-0" #dropdown>
+                <a href="#" class="hover:bg-gray-200 transition-colors p-1">Save data</a>
+                <a href="#" class="hover:bg-gray-200 transition-colors p-1">Fetch data</a>
+            </div>
         </div>
     </div>
 </div>

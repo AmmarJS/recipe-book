@@ -1,16 +1,25 @@
 <div class="w-full flex flex-col items-start gap-4 p-4">
-    <div class="w-full flex justify-between">
-        <h1 class="font-bold text-4xl">{{ recipe.name }}</h1>
-        <button class="manage-btn">
-            Manage Recipe
-            <svg class="w-2.5 h-2.5 mt-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-            </svg>
-        </button>
+    <div class="w-full flex flex-col justify-between gap-4">
+        <div class="w-max">
+            <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="w-full rounded-md object-cover">
+        </div>
+        <div class="flex justify-between">
+            <h1 class="font-bold text-4xl">{{ recipe.name }}</h1>
+            <button appDropdown class="relative">
+                <div class="manage-btn">
+                    Manage Recipe
+                    <svg class="w-2.5 h-2.5 mt-1 transition-all" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6" #svg>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                </div>
+                <div class="absolute w-full rounded-md shadow-xl flex-col origin-top transition-all overflow-hidden cursor-default border hidden" #dropdown>
+                    <a href="#" class="hover:bg-gray-200 transition-colors p-1">To Shopping List</a>
+                    <a href="#" class="hover:bg-gray-200 transition-colors p-1">Edit recipe</a>
+                    <a href="#" class="hover:bg-gray-200 transition-colors p-1">Delete recipe</a>
+                </div>
+            </button>
+        </div>
+        <p>Ingredients</p>
+        <p>{{ recipe.description }}</p>
     </div>
-    <div class="">
-        <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="w-60 h-48 rounded-md object-cover">
-    </div>
-    <p>Ingredients</p>
-    <p>{{ recipe.description }}</p>
 </div>

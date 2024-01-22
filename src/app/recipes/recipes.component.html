@@ -4,6 +4,6 @@
     *ngIf="recipe; else infoText"
     [recipe]="recipe"></app-recipe-detail>
     <ng-template #infoText>
-        
+        <p class="w-[50%] flex items-center justify-center text-3xl font-bold">Please select a recipe</p>
     </ng-template>
 </div>
